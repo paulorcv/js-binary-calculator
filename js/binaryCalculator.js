@@ -20,7 +20,6 @@ function clickOperand(event){
     const digit = event.target.innerHTML;
     res.innerHTML+= digit;
     operand += digit;
-    console.log('operand:', operand);
     toggleOperators(false);
     btnEql.disabled = false;
 }
@@ -30,7 +29,6 @@ function processOperands(){
     operator = (operator === '=') ? '' : operator;
     res.innerHTML += operator;
     binaryExpression += parseInt(operand, 2).toString() + operator;
-    console.log('binaryExpression:', binaryExpression);
     operand = '';
 }
 
@@ -53,9 +51,7 @@ function clickEql(event){
 }
 
 function result(){
-    console.log(binaryExpression);
     let result = (binaryExpression !=='') ? eval(binaryExpression) : '';
-    console.log(typeof result);
     return result.toString(2);
 }
 
